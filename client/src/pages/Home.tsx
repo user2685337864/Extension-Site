@@ -2,7 +2,7 @@
  * English-only tutorials page with the extension download placed first.
  */
 import { useEffect, useState } from "react";
-import { ChevronDown, Download, ExternalLink, FileArchive } from "lucide-react";
+import { ChevronDown, Download, ExternalLink, FileArchive, Play } from "lucide-react";
 
 const kiwiBrowserUrl = "https://kiwi-browser.br.uptodown.com/android";
 const tutorials = [
@@ -53,7 +53,34 @@ export default function Home() {
   return (
     <div className="site-shell tutorials-page">
       <main>
-        <section className="extension-download" aria-labelledby="extension-title">
+        <section className="overview-hero" aria-labelledby="overview-title">
+          <div className="overview-copy">
+            <span className="kicker overview-kicker">Start here</span>
+            <h1 id="overview-title">See what the extension does.</h1>
+            <p>
+              Watch the quick overview, then download the package and follow the setup guide for your device.
+            </p>
+            <a className="overview-jump" href="#extension-download">
+              <Play size={16} fill="currentColor" strokeWidth={2.6} />
+              Watch &amp; get started
+            </a>
+          </div>
+          <div className="overview-frame">
+            <div className="overview-frame-label">Extension overview · 00:40</div>
+            <video
+              src="/assets/extension-overview.mp4"
+              poster="/assets/extension-overview-poster.jpg"
+              controls
+              playsInline
+              preload="metadata"
+              className="overview-video"
+              aria-label="Overview video explaining what the extension does"
+            />
+            <span className="overview-sticker">Play the intro</span>
+          </div>
+        </section>
+
+        <section className="extension-download" id="extension-download" aria-labelledby="extension-title">
           <div className="extension-copy">
             <span className="kicker">Extension package</span>
             <h1 id="extension-title">Get the extension.</h1>
